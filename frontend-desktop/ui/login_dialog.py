@@ -111,76 +111,111 @@ class LoginDialog(QDialog):
         layout.addWidget(container)
     
     def apply_styles(self):
-        """Apply Qt stylesheet."""
+        """Apply Qt stylesheet - Emerald Glass Theme."""
         self.setStyleSheet('''
             #mainContainer {
                 background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
                     stop:0 #0f172a, stop:0.5 #1e1b4b, stop:1 #0f172a);
-                border-radius: 16px;
+                border-radius: 24px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
             }
+            
             #title {
-                color: #3b82f6;
-                font-size: 24px;
+                color: #34d399;
+                font-size: 26px;
                 font-weight: bold;
+                font-family: 'Segoe UI', 'Arial', sans-serif;
             }
+            
             #subtitle {
                 color: #94a3b8;
-                font-size: 14px;
+                font-size: 13px;
+                font-family: 'Segoe UI', 'Arial', sans-serif;
             }
+            
+            QLabel {
+                color: #f1f5f9;
+            }
+            
             QTabWidget::pane {
                 border: none;
                 background: transparent;
             }
+            
             QTabBar::tab {
-                background: #334155;
+                background: rgba(255, 255, 255, 0.03);
                 color: #94a3b8;
-                padding: 12px 30px;
-                border-radius: 8px;
-                margin: 2px;
+                padding: 14px 35px;
+                border-radius: 12px;
+                margin: 3px;
+                font-size: 13px;
+                font-weight: 500;
+                border: 1px solid rgba(255, 255, 255, 0.08);
             }
+            
+            QTabBar::tab:hover {
+                background: rgba(255, 255, 255, 0.08);
+                color: #f1f5f9;
+            }
+            
             QTabBar::tab:selected {
                 background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                    stop:0 #3b82f6, stop:1 #8b5cf6);
+                    stop:0 #10b981, stop:1 #14b8a6);
                 color: white;
+                border: none;
             }
+            
             QLineEdit {
-                background: #334155;
-                border: 2px solid transparent;
-                border-radius: 8px;
-                padding: 14px 16px;
+                background: rgba(15, 23, 42, 0.6);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                padding: 16px 18px;
                 color: #f1f5f9;
                 font-size: 14px;
             }
+            
             QLineEdit:focus {
-                border-color: #3b82f6;
+                border-color: #10b981;
+                border-width: 2px;
             }
+            
             QLineEdit::placeholder {
                 color: #64748b;
             }
+            
             #primaryBtn {
                 background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                    stop:0 #3b82f6, stop:1 #8b5cf6);
+                    stop:0 #10b981, stop:1 #14b8a6);
                 border: none;
-                border-radius: 8px;
-                padding: 14px;
+                border-radius: 12px;
+                padding: 16px;
                 color: white;
                 font-size: 14px;
                 font-weight: bold;
             }
+            
             #primaryBtn:hover {
                 background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                    stop:0 #2563eb, stop:1 #7c3aed);
+                    stop:0 #059669, stop:1 #0d9488);
             }
+            
+            #primaryBtn:disabled {
+                background: #374151;
+                color: #6b7280;
+            }
+            
             #secondaryBtn {
                 background: transparent;
-                border: 1px solid #64748b;
-                border-radius: 8px;
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                border-radius: 10px;
                 padding: 12px;
                 color: #94a3b8;
-                font-size: 14px;
+                font-size: 13px;
             }
+            
             #secondaryBtn:hover {
-                background: rgba(255, 255, 255, 0.1);
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.25);
             }
         ''')
     

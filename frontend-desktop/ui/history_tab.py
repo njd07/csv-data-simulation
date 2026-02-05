@@ -87,19 +87,19 @@ class HistoryTab(QWidget):
         item.setObjectName('historyItem')
         item.setCursor(Qt.PointingHandCursor)
         
-        border_style = 'border: 2px solid #3b82f6;' if is_selected else 'border: 2px solid transparent;'
-        bg_style = 'background: rgba(59, 130, 246, 0.15);' if is_selected else 'background: #1e293b;'
+        border_style = 'border: 2px solid #10b981;' if is_selected else 'border: 1px solid rgba(255, 255, 255, 0.08);'
+        bg_style = 'background: rgba(16, 185, 129, 0.15);' if is_selected else 'background: rgba(30, 41, 59, 0.8);'
         
         item.setStyleSheet(f'''
             #historyItem {{
                 {bg_style}
                 {border_style}
-                border-radius: 12px;
+                border-radius: 14px;
                 padding: 15px;
             }}
             #historyItem:hover {{
-                background: rgba(59, 130, 246, 0.1);
-                border-color: rgba(59, 130, 246, 0.3);
+                background: rgba(16, 185, 129, 0.08);
+                border-color: rgba(16, 185, 129, 0.4);
             }}
         ''')
         
@@ -139,9 +139,9 @@ class HistoryTab(QWidget):
         count_frame = QFrame()
         count_frame.setStyleSheet('''
             QFrame {
-                background: #334155;
-                border-radius: 8px;
-                padding: 8px 12px;
+                background: rgba(16, 185, 129, 0.15);
+                border-radius: 10px;
+                padding: 10px 14px;
             }
         ''')
         count_layout = QVBoxLayout(count_frame)
@@ -149,7 +149,7 @@ class HistoryTab(QWidget):
         count_layout.setSpacing(2)
         
         count_value = QLabel(str(upload.get('record_count', 0)))
-        count_value.setStyleSheet('color: #3b82f6; font-size: 18px; font-weight: bold;')
+        count_value.setStyleSheet('color: #34d399; font-size: 20px; font-weight: bold;')
         count_value.setAlignment(Qt.AlignCenter)
         count_layout.addWidget(count_value)
         

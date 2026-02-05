@@ -44,9 +44,9 @@ class SummaryTab(QWidget):
         self.ranges_frame = QFrame()
         self.ranges_frame.setStyleSheet('''
             QFrame {
-                background: #1e293b;
-                border-radius: 12px;
-                padding: 15px;
+                background: rgba(0, 0, 0, 0.2);
+                border-radius: 16px;
+                padding: 20px;
             }
         ''')
         self.ranges_layout = QVBoxLayout(self.ranges_frame)
@@ -56,9 +56,9 @@ class SummaryTab(QWidget):
         self.types_frame = QFrame()
         self.types_frame.setStyleSheet('''
             QFrame {
-                background: #1e293b;
-                border-radius: 12px;
-                padding: 15px;
+                background: rgba(0, 0, 0, 0.2);
+                border-radius: 16px;
+                padding: 20px;
             }
         ''')
         self.types_layout = QVBoxLayout(self.types_frame)
@@ -109,9 +109,9 @@ class SummaryTab(QWidget):
         
         # Stats cards
         stats = [
-            ('🔧', 'Total Equipment', str(self.summary.get('total_count', 0)), '#3b82f6'),
-            ('💧', 'Avg Flowrate', f"{self.summary.get('avg_flowrate', 0):.2f}", '#06b6d4'),
-            ('⚡', 'Avg Pressure', f"{self.summary.get('avg_pressure', 0):.2f} bar", '#10b981'),
+            ('🔧', 'Total Equipment', str(self.summary.get('total_count', 0)), '#10b981'),
+            ('💧', 'Avg Flowrate', f"{self.summary.get('avg_flowrate', 0):.2f}", '#14b8a6'),
+            ('⚡', 'Avg Pressure', f"{self.summary.get('avg_pressure', 0):.2f} bar", '#0ea5e9'),
             ('🌡️', 'Avg Temperature', f"{self.summary.get('avg_temperature', 0):.1f}°C", '#f59e0b'),
         ]
         
@@ -183,27 +183,30 @@ class SummaryTab(QWidget):
         card = QFrame()
         card.setStyleSheet(f'''
             QFrame {{
-                background: #1e293b;
-                border-radius: 12px;
-                border-left: 4px solid {color};
-                padding: 15px;
+                background: rgba(30, 41, 59, 0.8);
+                border-radius: 16px;
+                border-top: 3px solid {color};
+                padding: 18px;
+            }}
+            QFrame:hover {{
+                background: rgba(30, 41, 59, 0.95);
             }}
         ''')
         
         layout = QHBoxLayout(card)
         
         icon_label = QLabel(icon)
-        icon_label.setStyleSheet('font-size: 32px;')
+        icon_label.setStyleSheet('font-size: 36px;')
         layout.addWidget(icon_label)
         
         info_layout = QVBoxLayout()
         
-        label_lbl = QLabel(label)
-        label_lbl.setStyleSheet('color: #94a3b8; font-size: 12px;')
+        label_lbl = QLabel(label.upper())
+        label_lbl.setStyleSheet('color: #94a3b8; font-size: 10px; letter-spacing: 1px;')
         info_layout.addWidget(label_lbl)
         
         value_lbl = QLabel(value)
-        value_lbl.setStyleSheet('color: #f1f5f9; font-size: 24px; font-weight: bold;')
+        value_lbl.setStyleSheet(f'color: {color}; font-size: 26px; font-weight: bold;')
         info_layout.addWidget(value_lbl)
         
         layout.addLayout(info_layout)
@@ -216,26 +219,30 @@ class SummaryTab(QWidget):
         card = QFrame()
         card.setStyleSheet('''
             QFrame {
-                background: #334155;
-                border-radius: 8px;
-                padding: 12px;
+                background: rgba(30, 41, 59, 0.8);
+                border-radius: 12px;
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                padding: 14px;
+            }
+            QFrame:hover {
+                border-color: #10b981;
             }
         ''')
         
         layout = QHBoxLayout(card)
         
         icon_label = QLabel(icon)
-        icon_label.setStyleSheet('font-size: 24px;')
+        icon_label.setStyleSheet('font-size: 28px;')
         layout.addWidget(icon_label)
         
         info_layout = QVBoxLayout()
         
-        label_lbl = QLabel(label)
-        label_lbl.setStyleSheet('color: #94a3b8; font-size: 12px;')
+        label_lbl = QLabel(label.upper())
+        label_lbl.setStyleSheet('color: #94a3b8; font-size: 10px; letter-spacing: 0.5px;')
         info_layout.addWidget(label_lbl)
         
-        range_lbl = QLabel(f'{min_val:.2f} → {max_val:.2f}')
-        range_lbl.setStyleSheet('color: #f1f5f9; font-size: 14px;')
+        range_lbl = QLabel(f'{min_val:.2f}  →  {max_val:.2f}')
+        range_lbl.setStyleSheet('color: #f1f5f9; font-size: 15px; font-weight: 500;')
         info_layout.addWidget(range_lbl)
         
         layout.addLayout(info_layout)
