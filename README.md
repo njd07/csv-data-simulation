@@ -7,7 +7,17 @@ A full-stack application for uploading, analyzing, and visualizing chemical equi
 ![React](https://img.shields.io/badge/React-18+-61DAFB)
 ![PyQt5](https://img.shields.io/badge/PyQt5-5.15+-41CD52)
 
-## 🎯 Features
+## � Live Demo
+
+| Platform | Link |
+|----------|------|
+| **🖥️ Web App** | [https://csv-data-simulation.vercel.app](https://csv-data-simulation.vercel.app) |
+| **⚙️ Backend API** | [https://csv-data-simulation.onrender.com](https://csv-data-simulation.onrender.com) |
+
+> **Note**: The backend is hosted on Render's free tier and may take 30-60 seconds to wake up on first request.
+
+## �🎯 Features
+
 
 - **CSV Upload** - Upload equipment data via Web or Desktop interface
 - **Data Analysis** - Automatic calculation of summary statistics
